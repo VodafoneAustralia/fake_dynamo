@@ -5,7 +5,7 @@ module FakeDynamo
     def initialize(name, value, type)
       @name, @type = name, type
       validate_name!
-      return unless value
+      return if value.nil?
 
       @value = decode(value)
       validate_value!
